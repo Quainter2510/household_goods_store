@@ -17,7 +17,7 @@ class Shop:
             
     def create_csv(self, cheque, cash_number):
         curr_dir = os.path.dirname(__file__)
-        with open(os.path.join(curr_dir, 'data', f'{self.numder}_{cash_number}.csv'), 'w') as file:
+        with open(os.path.join(curr_dir, 'data', f'{self.numder}_{cash_number}.csv'), 'w', encoding='UTF-8') as file:
             writter = csv.writer(file, delimiter=';')
             writter.writerow(('doc_id', 'item', 'category', 'amount', 'price', 'discount'))
             writter.writerows(cheque)
